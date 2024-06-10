@@ -1,0 +1,72 @@
+/* height & width */
+.first{
+   height: 200px;
+   width: 400px; 
+   text-align: justify;
+}
+
+/* border */
+.first{
+    /* border-width: 4px;
+    border-style: solid;
+    border-color: brown; */
+    border: 5px dashed rebeccapurple;
+    /* border-left-style: solid;
+    border-left-color: rgb(83, 154, 240); */
+    border-left: 10px solid rgb(83, 240, 240);
+}
+
+/* border radius */
+.first{
+    border-radius: 20px;
+    border-top-right-radius: 30%;
+}
+button{
+    border-radius: 10px;
+    /* border-top-right-radius: 50%; */
+}
+
+/* padding */
+.first{
+    padding: 15px 20px;
+    /* padding-top: 20px; */
+
+}
+
+/* margin */
+.first{
+    margin-bottom: 25px;
+    margin-left: 20px;
+}
+
+/* display */
+span{
+    border: 2px solid black;
+    height: 50px;
+    width: 100px; /* height & width will not apply*/
+    /* background-color: aquamarine; */
+    padding: 25px; /* padding & margin only apply over left and right not top and bottom */
+    margin: 25px; 
+}
+.second{
+    border: 2px solid black;
+    height: 100px;
+    width: 100px;
+    
+    display: inline-block;
+}
+#second{
+    border: 2px solid black;
+}
+#last{
+    /* display: none; */
+}
+
+/* percentage */
+#second{
+    height: 200px;
+    width: 400px;
+}
+.second{
+    margin-top: 10%;
+}

@@ -1,0 +1,113 @@
+/* universal selector */
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Element selector */
+h3{
+    color: blueviolet;
+}
+h1, h3{
+    color: rgb(185, 43, 39);
+}
+
+/* id selector */
+#login{
+    background-color: blue;
+    color: white;
+}
+#signup{
+    background-color: brown;
+    color: white;
+}
+
+/* Class Selector */
+.upvote{
+    background-color: green;
+}
+
+/* practice */
+div[id="myid"] p{
+    color: red;
+}
+#myid p{
+    color: blue;
+}
+
+/* Descendent Selector */
+p a{
+    color: green;
+    background-color: rgb(193, 193, 39);
+}
+ nav ul li a{      /* nav a direct access*/
+    color: brown;
+}
+
+/* adjacent Sibling combinator */
+p+h3{
+    background-color: rgb(159, 213, 213);
+}
+.upvote+button{
+    background-color: aquamarine;
+    color: brown;
+}
+
+/* Child Combinator */ 
+/* indirect access */
+div > input{
+    background-color: rgb(192, 189, 189);
+    color: black;
+}
+
+/* attribute selector */
+ input[type="text"]{
+    color: green;
+ }
+ input[type="password"]{
+    color: red;
+ }
+
+ /* pseudo class */
+ button:hover{
+    background-color: blue;
+    color: white;
+ }
+ input[type="radio"]:hover +label{
+    color: brown;
+    font-weight: 100;
+ }
+ button:active{
+    background-color: aquamarine;
+    color: blueviolet;
+ }
+ h3:active{
+    font-weight: bold;
+    text-decoration: underline dotted;
+ }
+ input[id="xth"]:checked + label{
+    color: red;
+    font-weight: bold;
+ }
+ input[id="xiith"]:checked + label{
+    color: green;
+    font-weight: bold;
+ }
+ p:nth-of-type(odd){
+    background-color: blueviolet;
+ }
+ h3:nth-of-type(2n){
+    background-color: bisque;
+ }
+
+ /* pseudo element */
+ h1::first-letter{
+    color: green;
+ }
+ #para::first-line{
+    color: white;
+    background-color: rgb(250, 150, 44);
+ }
+ p::selection{
+    color: black;
+    background-color: red;
+ }

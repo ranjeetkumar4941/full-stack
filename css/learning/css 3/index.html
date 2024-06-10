@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
+    <link rel="stylesheet" href="indexstyle.css" />
+    <style>
+      button:hover{
+        background-color: brown;
+        color: white;
+      }
+      button:active{
+        color: black;
+        background-color: green;
+      }
+      p::first-line{
+        background-color: brown;
+        color: white;
+      }
+      p::first-letter{
+        color: rgb(177, 244, 216);
+      }
+      #para::selection{
+        background-color: yellowgreen;
+        color: white;
+      }
+      h1:hover{
+        color: rgb(70, 140, 245);
+        font-family: 'Courier New';
+        font-weight: bolder;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1>Random Heading</h1>
+    <div class="first">
+      <p id="para">Now is the winter of our discontent Made glorious summer by this sun of
+        York; And all the clouds that lour'd upon our house In the deep bosom of
+        the ocean buried. Now <span>INLINE</span> our brows bound with victorious wreaths; Our
+        bruised arms hung up for monuments; Our stern alarums changed to merry
+        meetings, Our dreadful marches to delightful measures. Grim-visaged war
+        hath smooth'd his wrinkled front;</p>
+    </div>
+    <div class="first">
+     <p> And now, instead of mounting barded steeds To fright the souls of fearful
+      adversaries, He capers nimbly in a lady's chamber To the lascivious
+      pleasing of a lute. But I, that am not shaped for sportive tricks, Nor
+      made to court an amorous looking-glass; I, that am rudely stamp'd, and
+      want love's majesty To strut before a wanton ambling nymph; I, that am
+      curtail'd of this fair proportion,</p>
+    </div>
+    <div id="second">
+      <div style="background-color: aqua;" class="second"></div>
+      <div style="background-color: rgb(72, 0, 255);" class="second"></div>
+      <div style="background-color: rgb(255, 0, 119);" class="second" id="last"></div>
+    </div>
+    <button>Click me</button>
+  </body>
+</html>

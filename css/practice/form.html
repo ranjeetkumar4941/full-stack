@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: rgb(245, 177, 87);
+        }
+        div{
+            border: 2px solid black;
+            margin-top: 5%;
+            margin-left: 37%;
+            margin-right: 37%;
+            height: 350px;
+            padding: 2%;
+            background-color: rgb(246, 101, 101);
+            overflow: hidden;
+            transition: 1.5s;
+        }
+        div:hover{
+            border-radius: 10px;
+            border: 2px dashed blue;        
+            background-color: aqua;
+        }
+        form{
+            background-color: rgb(255, 196, 0);
+            border: 2px dashed blue;
+            overflow: hidden;
+            transition: 2s;
+        }
+        form:hover{
+            background-color: aqua;
+            border: none;
+        }
+        div:hover .left{
+            color: rgb(255, 196, 0);
+        }
+        div:hover input[type="radio"] + label{
+            color: rgb(255, 196, 0);
+        }
+        div:hover h2{
+            color: rgb(255, 196, 0);
+        }
+        form:hover .left{
+            color: black;
+            background-color: aqua;
+        }
+        form:hover input[type="radio"] + label{
+            color: black;
+            background-color: aqua;
+        }
+        form:hover h2{
+            text-decoration: underline dotted brown;
+            color: brown;
+            background-color: aqua;
+        }
+        input[type="radio"] + label{
+            transition: 2s;
+        }
+        h2{
+            margin-top: 0;
+            padding-top: 2%;
+            text-align: center;
+            text-decoration: underline;
+            transition: 2s;
+        }
+        .left{
+            margin-left: 3%;
+            transition: 2s;
+        }
+        input[type="date"]{
+            width: 165px;
+        }
+        input[id="project"]{
+            margin-left: 6%;
+        }
+        input[id="Name"]{
+            margin-left: 9%;
+        }
+        input[id="start"]{
+            margin-left: 13%;
+        }
+        input[id="end"]{
+            margin-left: 14%;
+        }
+        input[id="High"]{
+            margin-left: 16%;
+        }
+        textarea{
+            margin-bottom: -4%;
+            margin-left: 8%;
+            background-color: rgb(238, 228, 215);
+            border-radius: 10px;
+        }
+        button{
+            margin-left: 22%;
+            /* border: 1px solid black; */
+            border-radius: 10px;
+            background-color: greenyellow;
+            color: brown;
+            padding: 5px;
+            transition: 1s;
+        }
+        button:hover{
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            
+        }
+        input{
+            border: 1px solid gray;
+            border-radius: 7px;
+            background-color: rgb(238, 228, 215);
+        }
+        input:hover{
+            border: none;
+        }
+        form:hover input[type="radio"]:active + label{
+            color: rgb(248, 71, 71);  
+        }
+        label,h2,span{
+            background-color: rgb(255, 196, 0);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+            <form action="">
+                <h2>Project Management</h2>
+                <label class="left" for="project">Project Name</label>
+                <input type="text" id="project" placeholder="project name">
+                <br><br>
+    
+                <label class="left" for="Name">Assigned to</label>
+                <input type="text" id="Name" placeholder="Er Merry Petison">
+                <br><br>
+    
+                <label class="left" for="start">Start Date</label>
+                <input type="date" id="start" value="dd-mm-yyyy">
+                <br><br>
+    
+                <label class="left" for="end">End Date</label>
+                <input type="date" id="end" value="dd-mm-yyyy">
+                <br><br>
+                
+                <span class="left">Priority</span>
+                <input type="radio" name="performance" id="High">
+                <label for="High">High</label>
+               
+                <input type="radio" name="performance" id="Average">
+                <label for="Average">Average</label>
+    
+                <input type="radio" name="performance" id="Low">
+                <label for="Low">Low</label>
+                <br>
+                <br>
+                <label class="left" for="Message">Description</label>
+                <textarea name="" id="Message" cols="24" rows="2"></textarea>
+                <br>
+                <br>
+                <br>
+                <button>Submit</button>
+                <button>Clear</button>
+                <br><br>
+            </form>
+    </div>
+</body>
+</html>
