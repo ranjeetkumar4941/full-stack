@@ -84,3 +84,54 @@ console.log(num2.concat(num)); // here num2 will priht first after that num will
 // reverse:- it is used for reverse any array 
 console.log(num.reverse());
 console.log(num);   // and it change the original value of array also
+
+// splice:- it is used to remove/slice/add/replace element in array
+// we pass argument as follow:-
+// array.splice(startingPoint, deletecount, additem1,....,additemn)
+let result=num2.splice(3); //if we pass one argument it works like slice method
+console.log(result);    // it return that value which slice it
+console.log(num2);      // it changes actual value of array 
+
+let number=[11,12,13,14,15,16];
+// if we want to delete 13 then
+number.splice(2,1); //here 2 is index where we perform deletion and 1 shows how many number will delete
+console.log(number); // o/p - 11,12,14,15,16
+// if want to delete 11 and add 8,9,10,11 then
+number.splice(0,1,8,9,10,11); // 0 is index of array, 1 is number of delete and others are item that we want to add
+console.log(number); // o/p- 8,9,10,11,12,14,15,16
+// if want to add 13 between 12 and 14 then
+number.splice(5, 0, 13);
+console.log(number);
+
+// sort
+let names=["rahul", "amit", "saunik"];
+names.sort();
+console.log(names);
+let arr=[23, 45,100 ,20, 30, 76]; // number will not sort because before sort it change it into string
+arr.sort();
+console.log(arr);
+
+// array reference
+let ARR=[3];
+let NARR=[3];
+console.log(ARR==NARR); // it returns false, in js, array store reference of variable not actual value 
+
+let nArr=ARR;
+nArr.push(5);
+console.log(nArr);
+console.log(ARR); // it will also change because both have same reference value
+// solution is that we have to create a new array 
+
+// const array
+const conArray=[1,2,3];
+conArray[3]=5;
+console.log(conArray); // it will change because it reference value will be constant not their actual value 
+// conArray=[3,4,5];    // but we can't change whole array it will occur error
+
+// nested array
+let nesarray=[[1,2],[3,4],[5,6]];
+console.log(nesarray);
+// to access
+console.log(nesarray[2][0]);
+
+
