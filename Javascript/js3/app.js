@@ -75,3 +75,12 @@ console.log(num.indexOf(3));
 console.log(num.includes(7));
 console.log(num.includes(4));
 
+
+// concat:- it is used for add merge two array
+let num2 = [6,7,8,9,10];
+console.log(num.concat(num2)); //here num will print first after that num2 will print 
+console.log(num2.concat(num)); // here num2 will priht first after that num will print 
+
+// reverse:- it is used for reverse any array 
+console.log(num.reverse());
+console.log(num);   // and it change the original value of array also
