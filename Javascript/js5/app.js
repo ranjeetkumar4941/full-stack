@@ -115,13 +115,15 @@ console.log(num3);
 let inp = parseInt(prompt("Enter maximum range(1 to ...)"))
 let calculate = Math.floor(Math.random()*inp)+1;
 let guess;
-if(inp){
+// if user enter range
+if(inp){ 
     guess = prompt("Enter number which you guess:");
 }
 while(guess && guess != "quit"){
     guess = parseInt(guess);
     if(guess == calculate){
         alert("Congrats! you win.");
+        // when user want to play again
         let decision = prompt("Do you want ot play again.(Y/N)");
         if(decision == "Y" || decision == "y"){
             inp = parseInt(prompt("Enter maximum range(1 to ...)"))
@@ -134,6 +136,7 @@ while(guess && guess != "quit"){
         }
         
     }else{
+        // this is hint when range is greater than 10
         if(inp>10){
             if(guess>calculate ){
                 alert("Hints: Think smaller.");
