@@ -47,7 +47,7 @@ while(check && check != "quit"){
             console.log("-------------");
             break;
         case "add":
-            let insert = prompt("Enter task");
+            let insert = prompt("Enter task : ");
             let ind = parseInt(prompt("where you want to add, enter number : "));
             todo.splice(ind-1,0,insert);
             console.log("Task added");
