@@ -16,6 +16,7 @@
         
 //     }
 // }
+
 // table of a number
 // let n = parseInt(prompt("Enter a number : "));
 // for(let i=n; i<=n*10; i+=n){
