@@ -62,24 +62,24 @@
 // alert(`${uName} is ${uAge} years old.`);
 
 // // QS3
-// let monthQuarter = 3;
-// switch(monthQuarter){
-//     case 1:
-//         console.log("January, February, March");
-//         break;
-//     case 2:
-//         console.log("April, May, June");
-//         break;
-//     case 3:
-//         console.log("July, August, September");
-//         break;
-//     case 4:
-//         console.log("October, November, Decrmber");
-//         break;
-//     default:
-//         console.log("Enter a valid number");
-//         break;
-// }
+let monthQuarter = 3;
+switch(monthQuarter){
+    case 1:
+        console.log("January, February, March");
+        break;
+    case 2:
+        console.log("April, May, June");
+        break;
+    case 3:
+        console.log("July, August, September");
+        break;
+    case 4:
+        console.log("October, November, Decrmber");
+        break;
+    default:
+        console.log("Enter a valid number");
+        break;
+}
 
 // QS6
 let num1 = prompt("Enter first number :");
