@@ -35,33 +35,87 @@
 // alert("Congrats!");
 
 // to do app
-let todo=[];
+// let todo=[];
 
-let check = prompt("Enter your request : ");
-while(check && check != "quit"){
-    switch(check){
-        case "list":
-            console.log("-------------");
-            for(i of todo){
-                console.log(i);
-            }
-            console.log("-------------");
-            break;
-        case "add":
-            let insert = prompt("Enter task : ");
-            let ind = parseInt(prompt("where you want to add, enter number : "));
-            todo.splice(ind-1,0,insert);
-            console.log("Task added");
+// let check = prompt("Enter your request : ");
+// while(check && check != "quit"){
+//     switch(check){
+//         case "list":
+//             console.log("-------------");
+//             for(i of todo){
+//                 console.log(i);
+//             }
+//             console.log("-------------");
+//             break;
+//         case "add":
+//             let insert = prompt("Enter task : ");
+//             let ind = parseInt(prompt("where you want to add, enter number : "));
+//             todo.splice(ind-1,0,insert);
+//             console.log("Task added");
             
-            break;
-        case "remove":
-            let Delete = prompt("Which task, you want to remove : ");
-            todo.splice(todo.indexOf(Delete),1);
-            console.log("Task removed");
-            break;
-        default:
-            alert("Wrong request. Please try again.");
-            break;
+//             break;
+//         case "remove":
+//             let Delete = prompt("Which task, you want to remove : ");
+//             todo.splice(todo.indexOf(Delete),1);
+//             console.log("Task removed");
+//             break;
+//         default:
+//             alert("Wrong request. Please try again.");
+//             break;
+//     }
+//     check = prompt("Enter your request : ")
+// }
+
+// js4 QS & Ans
+// qs1
+let qs1= [1,2,3,4,5,6,2,3];
+let n1= 4;
+console.log("Before delete: ");
+console.log(qs1);
+
+for(let i=0; i<qs1.length; i++){
+    if(qs1[i] == n1){
+        qs1.splice(qs1.indexOf(n1),1);
     }
-    check = prompt("Enter your request : ")
 }
+console.log("After delete: ");
+console.log(qs1);
+
+// qs2
+let qs2= 274656;
+let count=0;
+
+while(qs2>0){
+    qs2=Math.floor(qs2/10);
+    count++;
+}
+console.log("Digit: ", count);
+
+// qs3
+let qs3= 546545;
+let sum= 0;
+while(qs3>0){
+    let digit= qs3%10;
+    qs3=Math.floor(qs3/10);
+    sum += digit;
+}
+console.log("Sum is ", sum);
+
+// qs4
+let qs4= 5;
+let fact=1;
+for(let i=1; i<=qs4; i++){
+    fact *= i;
+}
+console.log("Factorial is ", fact);
+
+// qs5
+let qs5=[2,8,3,0,4,7,24,7];
+let largest= 0;
+for(let i=0; i<qs5.length; i++){
+    if(qs5[i]>largest){
+        largest=qs5[i];
+    }
+}
+console.log("Largest number is ", largest);
+
