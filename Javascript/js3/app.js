@@ -134,4 +134,51 @@ console.log(nesarray);
 // to access
 console.log(nesarray[2][0]);
 
+// js3 QS & Ans
+// qs1
+let q1=[7,9,0,-2];
+n1=3;
+console.log(q1.slice(0,3));
+
+// qs2
+console.log(q1.slice(-3));
+
+// qs3
+let qs3= "";
+if(qs3 != 0){
+    console.log("String is not blank");
+    
+}else{
+    console.log("String is blank");
+    
+}
+
+// qs4
+let qs4= "HellO World!";
+let n4= 2;
+if(qs4[n4] === qs4[n4].toLowerCase()){
+    console.log(`${qs4[n4]} is in lowercase.`);
+    
+}else{
+    console.log(`${qs4[n4]} is not in lowercase.`);
+}
+
+// qs5
+let qs5= "   love coding    ";
+console.log("Before trim: ");
+console.log(qs5);
+console.log("After trim:");
+console.log(qs5.trim());
+
+// qs6
+let qs6=[2,6,8,3,9];
+n6=8;
+if(qs6.indexOf(n6) == -1){
+    console.log(`${n6} is not exist.`);
+    
+}else{
+    console.log(`${n6} is exist.`);
+    
+}
+
 
