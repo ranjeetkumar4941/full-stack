@@ -112,40 +112,65 @@ let num3 = Math.floor(Math.random()*5)+21
 console.log(num3);
 
 // guessing number game
-let inp = parseInt(prompt("Enter maximum range(1 to ...)"))
-let calculate = Math.floor(Math.random()*inp)+1;
-let guess;
-// if user enter range
-if(inp){ 
-    guess = prompt("Enter number which you guess:");
-}
-while(guess && guess != "quit"){
-    guess = parseInt(guess);
-    if(guess == calculate){
-        alert("Congrats! you win.");
-        // when user want to play again
-        let decision = prompt("Do you want ot play again.(Y/N)");
-        if(decision == "Y" || decision == "y"){
-            inp = parseInt(prompt("Enter maximum range(1 to ...)"))
-            calculate = Math.floor(Math.random()*inp)+1;
-            if(inp){
-                guess = prompt("Enter number which you guess:");
-            }
-        }else{
-            break;
-        }
+// let inp = parseInt(prompt("Enter maximum range(1 to ...)"))
+// let calculate = Math.floor(Math.random()*inp)+1;
+// let guess;
+// // if user enter range
+// if(inp){ 
+//     guess = prompt("Enter number which you guess:");
+// }
+// while(guess && guess != "quit"){
+//     guess = parseInt(guess);
+//     if(guess == calculate){
+//         alert("Congrats! you win.");
+//         // when user want to play again
+//         let decision = prompt("Do you want ot play again.(Y/N)");
+//         if(decision == "Y" || decision == "y"){
+//             inp = parseInt(prompt("Enter maximum range(1 to ...)"))
+//             calculate = Math.floor(Math.random()*inp)+1;
+//             if(inp){
+//                 guess = prompt("Enter number which you guess:");
+//             }
+//         }else{
+//             break;
+//         }
         
-    }else{
-        // this is hint when range is greater than 10
-        if(inp>10){
-            if(guess>calculate ){
-                alert("Hints: Think smaller.");
-            }
-            else{
-                alert("Hints: Think greater.");
-            }
-        }
-        guess = prompt("Wrong! Please try again or quit.")
-    }
-}
+//     }else{
+//         // this is hint when range is greater than 10
+//         if(inp>10){
+//             if(guess>calculate ){
+//                 alert("Hints: Think smaller.");
+//             }
+//             else{
+//                 alert("Hints: Think greater.");
+//             }
+//         }
+//         guess = prompt("Wrong! Please try again or quit.")
+//     }
+// }
 
+// js5 QS & Ans
+// qs1
+let qs1=Math.floor(Math.random()*6)+1;
+console.log("Number of Dice roll is ", qs1);
+
+// qs2
+const car={
+    name: "supra",
+    model: "MK4",
+    color: "Red"
+};
+console.log(car);
+console.log(car.name);
+
+// qs3
+const person={
+    name: "john",
+    age: 21,
+    city: "Delhi"
+};
+console.log(person);
+person.city="New York";
+console.log(person);
+person.country="United states";
+console.log(person);
