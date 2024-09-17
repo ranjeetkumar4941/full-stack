@@ -116,3 +116,70 @@ const calc={
 console.log(calc);
 console.log(calc.sub(9,4));
 
+// QS & Ans
+// qs1
+let qs1= [4,8,4,7,9,5,3,,2,6,2];
+let num1=5;
+function largerElement(arr, num){
+    let temp=[];
+    for(let i=0; i<arr.length; i++){
+        if(arr[i]>num){
+            temp.push(arr[i]);
+        }
+    }
+    return temp;
+}
+console.log(largerElement(qs1, num1));
+
+// qs2
+let qs2= "guohfeiuhigehj";
+function checkUniChar(str){
+    let temp="";
+    for(let i=0; i<str.length; i++){
+        if(temp.indexOf(str[i])== -1){
+            temp += str[i];
+        }            
+    }
+    return temp;
+}
+console.log(checkUniChar(qs2));
+
+// qs3
+let qs3= ["Australia", "Germany", "USA"];
+function longestName(arr){
+    let temp=arr[0];
+    for(let i=1; i<arr.length; i++){
+            if(arr[0].length<arr[i].length){
+                temp=arr[i];
+            }
+    }
+    return temp;
+}
+console.log(longestName(qs3));
+
+// qs4
+let qs4= "tyjggfgefhairtyujtwtj";
+function countVowel(str){
+    let count=0;
+    for(let i=0; i<str.length; i++){
+        if(str.charAt(i) == "a" ||
+        str.charAt(i) == "e" ||
+        str.charAt(i) == "i" ||
+        str.charAt(i) == "o" ||
+        str.charAt(i) == "u" ){
+            count++;
+        }
+    }
+    return count;
+}
+console.log(countVowel(qs4));
+
+// qs5
+let start=1;
+let end=10;
+function randomNum(start,end){
+    let qs5= Math.ceil(Math.random()*10);
+    return qs5;
+}
+console.log(randomNum(start,end));
+
