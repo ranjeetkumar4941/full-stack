@@ -6,6 +6,8 @@ const student={
     eng: 76,
     phy: 89,
     getAvg: function(){
+        console.log(this);  // it will print student because in a normal function 'this' refers to that object which call it
+        
         console.log((this.math+this.eng+this.phy)/3);
     }
 }
@@ -66,7 +68,33 @@ let id = setInterval(() => {    // it will not run infinite time because line 67
 },2000); 
 clearInterval(id);
 
+// this in arrow function
+const student1= {
+    name: "Rohit",
+    marks: 76,
+    prop: this, //it will refer to window because window call our student1 object 
+    getname(){
+        console.log(this);  // it will refer to our student1 because student1 will call it
+        return this.marks;
+    },
+    getmarks: () => {
+        console.log(this);  // it will refer to window because it refers to that object which call it parent
+        return this.marks;
+        
+    }
+}
+console.log(student1.prop);
+console.log(student1.getname());
+console.log(student1.getmarks());
 
+// prac qs
+let Id=setInterval( () => {
+    console.log("Hello");
+    
+}, 2000);
+setTimeout( () => {
+    clearInterval(Id);
+}, 10000);
 
 
 
