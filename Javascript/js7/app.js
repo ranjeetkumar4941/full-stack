@@ -88,13 +88,59 @@ console.log(student1.getname());
 console.log(student1.getmarks());
 
 // prac qs
-let Id=setInterval( () => {
-    console.log("Hello");
+// let Id=setInterval( () => {
+//     console.log("Hello");
     
-}, 2000);
-setTimeout( () => {
-    clearInterval(Id);
-}, 10000);
+// }, 2000);
+// setTimeout( () => {
+//     clearInterval(Id);
+// }, 10000);
 
+// QS & Ans
+// qs1
+let arrayAverage= (arr) => {
+    let avg=0;
+    for(let i=0; i<arr.length; i++){
+        avg+=arr[i];
+    }
+    return avg/arr.length;
+}
+let avg=arrayAverage([1,2,3,4,5]);
+console.log("Average is ", avg);
 
+// qs2
+let isEven = n => {
+    if(n%2 == 0){
+        return "Even";
+        
+    }else{
+        return "Not Even";
+    }
+}
+console.log(isEven(5));
 
+// qs3
+// message= "hello"
+const obj1={
+    message: 'Hello, world',
+    logMessage(){
+        console.log(this.message);
+        // console.log("hello");
+    }
+};
+setTimeout(obj1.logMessage,1000);
+
+// qs4
+let len = 4;
+function callback(){
+    console.log(this.len);
+    // console.log("hello");
+}
+const obj = {
+    length: 5,
+    method(callback){
+        callback();
+    }
+
+};
+obj.method(callback,1,2);
