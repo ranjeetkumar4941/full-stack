@@ -104,6 +104,56 @@ let anarr=[1,2,3,4,5];
 let arrobj={...anarr}; // in case of array index will be key, value of array will be value and same in string
 console.log(arrobj);
 
+// rest: it is opposite to spread and use with function as arguments that takes multiple number of arguments
+function print1(...args){
+    for(let i=0; i<args.length; i++){
+        console.log(`argument ${i+1} is ${args[i]}` );
+    }
+}
+print1(4,5,7,5,4,4,5,6,7);
 
+function Min(...args){
+    return args.reduce((min, n) => {
+        if(min<n){
+            return min;
+        }else{
+            return n;
+        }
+    })
+}
+console.log(Min(7,4,7,8,5,3,2,3,5,6,7));
+
+// destructuring: it stores array's value into variables
+let names= ['peter','john','tony','bruce'];
+// let winner=names[0];
+// let runnerup=names[1];
+// in this method there are multiple lines so we use below method
+let [winner, runnerup]= names;
+console.log(winner);
+console.log(runnerup);
+let number =[1,3,4,5,7,5,4];
+let [first, second, ...others]=number;//we can use rest to store other value in a single 
+console.log(first);
+console.log(second);
+console.log(others);
+
+// destructuring in object
+const info={
+    name: "amit",
+    age: 21, 
+    username: "wgfg213",
+    password: "abc@"
+};
+let {username, password}=info; // we use {} to use it for object
+console.log(`username: ${username}, password: ${password}`);
+// if we want to change name of variable then
+let {username: user, password: pass}=info;
+console.log(`username: ${user}, password: ${pass}`);
+// if property does not exist in object then we use default value with key or variable name
+let {name, city="delhi"}=info;
+console.log(city);
+// if we want to change our default variable name
+let {degree: dept="BCA"}=info;
+console.log(dept);
 
 
