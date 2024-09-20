@@ -157,3 +157,47 @@ let {degree: dept="BCA"}=info;
 console.log(dept);
 
 
+// QS & ANS
+// qs1
+let qs1=[1,2,3,4,5];
+let square=qs1.map((n) => (n*n));
+console.log(square);
+let sumofel=qs1.reduce((sum,n) => (sum+n));
+console.log(sumofel);
+
+let avgofarr=sumofel/qs1.length;
+console.log(avgofarr);
+
+// qs2
+let qs2=[1,2,3,4,5];
+let newarr=qs2.map((n) => (n+5));
+console.log(newarr);
+
+// qs3
+let qs3=["john","bruce","tony"];
+let upper=qs3.map((str) => (str.toUpperCase()));
+console.log(upper);
+
+// qs4
+function doubleAndReturnArgs(...args){
+    let doubleArr=args.map((n) => (n*2));
+    let finalArr=[args, doubleArr];
+    return finalArr;
+}
+let result=doubleAndReturnArgs(4,3,5,6,5);
+console.log(result);
+
+// qs5
+function mergeObjects(obj1,obj2){
+    let finalObj={...obj1,...obj2};
+    return finalObj;
+}
+const student={
+    name: "Akash",
+    rollno: 97
+}
+const inform={
+    username: "akash_123",
+    password: "abc@"
+}
+console.log(mergeObjects(student,inform));
