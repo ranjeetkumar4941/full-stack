@@ -26,3 +26,17 @@ body {
 #description {
   background-color: antiquewhite;
 }
+
+/* for javascript  */
+.textcolor{
+  color: aqua;
+}
+.underline{
+  text-decoration: wavy purple underline;
+}
+.bgcolor{
+  background-color: rgb(238, 61, 111);
+}
+.width{
+  width: 35%;
+}
