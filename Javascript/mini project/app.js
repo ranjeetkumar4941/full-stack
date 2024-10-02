@@ -17,3 +17,25 @@ for(let list of lists){
         console.log("list was clicked");
     })
 }
+
+// Event delegation
+let ol=document.querySelector("ol");
+let inpName=document.querySelector("#fruit");
+let enterBtn=document.querySelector("#enter");
+
+enterBtn.addEventListener("click", function(){
+    let list=document.createElement("li");
+    list.innerText=inpName.value;
+    let deleteBtn=document.createElement("button");
+    deleteBtn.innerText="Delete";
+    list.appendChild(deleteBtn);
+    ol.appendChild(list);
+    inpName.value="";
+});
+ol.addEventListener("click",(event) => {
+    console.log(event.target);// target means on which element we are perform operation 
+    if(event.target.nodeName == "BUTTON"){ // nodeName means name of that element in capital letter
+        let list = event.target.parentElement;
+        list.remove();
+    }
+})
