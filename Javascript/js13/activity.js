@@ -51,5 +51,5 @@ function errorPrint(err){
     let p=document.createElement("span");
     p.innerText=err;
     p.style.color="red";
-    document.querySelector("ul").insertAdjacentElement("beforeend", p);
+    document.querySelector("ul").insertAdjacentElement("beforebegin",p);
 };
