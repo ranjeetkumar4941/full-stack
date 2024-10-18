@@ -1,8 +1,15 @@
-console.log("hello");
+// module.exports=3234;
+let sum =(a,b) => a+b;
+let mul = (a,b) => a*b;
+const g=9.18;
+const PI=3.14;
 
-let array=[2,4,6,8,10,12,14,16,18,20];
-for (let i = 0; i < array.length; i++) {
-    console.log(array[i]);
+const obj = {
+    sum: sum,
+    mul: mul,
+    g: g,
+    Pi: PI
 }
-module.exports=array;
-console.log("wpr");
+// module.exports=obj;
+module.exports.g=9.18;
+module.exports.PI=3.14;
