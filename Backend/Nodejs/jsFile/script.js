@@ -1,1 +1,1 @@
-console.log("This is script.js file");
+module.exports="This is script.js file";

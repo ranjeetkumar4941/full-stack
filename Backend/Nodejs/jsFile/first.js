@@ -1,1 +1,1 @@
-console.log("This is first.js file");
+module.exports="This is first.js file";

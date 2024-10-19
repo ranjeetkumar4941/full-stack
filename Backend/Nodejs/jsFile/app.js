@@ -1,1 +1,1 @@
-console.log("This is app.js file");
+module.exports="This is app.js file";

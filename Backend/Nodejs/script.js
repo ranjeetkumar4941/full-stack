@@ -8,6 +8,11 @@
 //     console.log("Hello! ",arr[i]);
 // }
 
-let appFileData=require("./app");
-console.log(appFileData);
+// require file
+// let appFileData=require("./app");
+// console.log(appFileData);
+
+// require Directory
+let directoryData=require("./jsFile"); // it track index file which is similar to main() in c/c++
+console.log(directoryData);
 
