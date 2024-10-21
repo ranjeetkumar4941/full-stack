@@ -34,7 +34,7 @@ app.get("/ig/:username", (req, res) => {
     let {username} = req.params;
     res.render("instagram.ejs", {username});
 });
-app.get("/search", (req, res) => {
-    let {q} = req.query;
-    res.render("instagram.ejs", {q});
-})
+// app.get("/search", (req, res) => {
+//     let {q} = req.query;
+//     res.render("instagram.ejs", {q});
+// })
