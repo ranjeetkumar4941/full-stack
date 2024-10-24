@@ -38,3 +38,9 @@ app.get("/ig/:username", (req, res) => {
 //     let {q} = req.query;
 //     res.render("instagram.ejs", {q});
 // })
+
+// conditional statement
+app.get("/checknum/:num", (req, res) => {
+    let {num} = req.params;
+    res.render("home", {num});
+})
