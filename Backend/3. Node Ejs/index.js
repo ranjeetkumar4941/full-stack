@@ -44,3 +44,22 @@ app.get("/checknum/:num", (req, res) => {
     let {num} = req.params;
     res.render("home", {num});
 })
+
+// loop
+app.get("/table/:num", (req, res) => {
+    let {num} = req.params;
+    res.render("home", {num});
+})
+
+// instagram Activity
+let data = require("./data.json");
+app.get("/search", (req, res) => {
+    let {q} = req.query;
+    let user=data[q];
+    if(user){
+        res.render("instagram.ejs", {user}); 
+    }else{
+        res.send("Data not Found!");
+    }
+    
+});
