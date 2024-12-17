@@ -8,7 +8,69 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button>Click</button>
-    <button class="btn btn-outline-success">Submit</button>
+    <div class="head">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary " data-bs-theme="dark" >
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">Bootstrap</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Tools
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="layout.html">Layout</a></li>
+                      <li><a class="dropdown-item" href="components.html">Components</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </div>
+
+    <div class="container">
+        <h2>Topics</h2>
+        <a href="#definition">What is Bootstrap?</a><br>
+        <a href="#benefits">Benifits</a><br>
+        <a href="#use">Using bootstrap</a><br>
+        <a href="#cover">What will we cover?</a>
+        <div id="definition">
+            <h3 >What is Bootstrap?</h3>
+            <p>
+                Bootstrap is a powerful, feature-packed frontend toolkit. Build anything from prototype to production in minutes.Bootstrap is a free and open-source front-end framework that simplifies web design by providing a responsive grid system, pre-designed components, and customizable utilities. It is designed to help developers create quickly modern, visually appealing websites and applications with a mobile-first approach.
+            </p>
+        </div>
+        <div id="benefits">
+            <h3>Benifits:</h3>
+            <p>
+                Faster and easier <br> Pre-built <a href="components.html">components</a> <br> Browser compatability
+            </p>
+        </div>
+        <div id="use">
+            <h3>Using Bootstrap</h3>
+            <p>
+                To use Bootstrap, we will have to download it or link CDN links to our HTML file.It may be CSS or JavaScript. 
+            </p>
+        </div>
+        <div id="cover">
+            <h3>What will we Cover?</h3>
+            <h5>Component</h5>
+            <p>Pre-built and reusable piece of user interface(UI). <br> Example:- Button, Form</p>
+            <h5>Layout</h5>
+            <p>Overall structure and arrangement of the elements. <br> Example:- Container, grid</p>
+        </div>
+        <button class="btn btn-outline-success">Submit</button>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
