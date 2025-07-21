@@ -13,9 +13,10 @@ app.listen(port, () => {
 // app.use((req, res) => {
 //     console.log("Request received");
 // })
-// app.get("/",(req, res) => {
-//     console.log("get request")
-// })
+app.get("/",(req, res) => {
+    console.log("get request")
+    res.send("Home page!")
+})
 // app.get("/home", (req, res) => {
 //     console.log("get request to /home");
 // })
@@ -50,11 +51,11 @@ app.listen(port, () => {
 // })
 
 // Path parameters
-// app.get("/:username", (req, res) => {
-//     // console.log(req.params);
-//     let {username} = req.params;
-//     res.send(`Hii @${username}, Welcome to your profile.`);
-// });
+app.get("/:username", (req, res) => {
+    console.log(req.params);
+    let {username} = req.params;
+    res.send(`Hii @${username}, Welcome to your profile.`);
+});
 // app.get("/:username/:password", (req, res) => {
 //     let {username, password} = req.params; // name will be same as well as in path
 //     res.send(`Hi @${username}, Your password is ${password}.`)
