@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h3>Enter your name:</h3>
-    <input type="text">
-    <button>Enter</button>
+    <input type="text" id="inp" >
+    <button id="btn">Enter</button>
     <!-- we '<%= %>' like template literal in js. It is tag of ejs-->
     <h1>Sum of <%=6%> & <%=6%> = <%=6+6%></h1>
 
@@ -23,5 +24,7 @@
     <%// for( let i =1; i<=10; i++ ) { %>
         <h1><%=// num*i %> </h1>
     <% //} %>
+    <%- include("include/footer.ejs") %>
+    <script src="js/script.js"></script>
 </body>
 </html>
