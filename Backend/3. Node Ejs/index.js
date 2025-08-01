@@ -2,6 +2,14 @@ const express = require("express");
 const app = express();
 const port = 8080;
 
+// path is a package that comes with express and we need to require before use it.
+const path = require("path");
+
+// app.use(express.static("public"));
+// we use express.static to serve static files like css, js, images etc.
+// public is the folder name where we keep our static files
+// we can also use path.join(__dirname, "public") to set the path
+app.use(express.static(path.join(__dirname, "public")));
 app.listen(port, () => {
     console.log("Server is running...");
 });
@@ -16,8 +24,7 @@ app.get("/", (req, res) => {
 app.get("/home", (req, res) => {
     res.render("home.ejs");// extension is not mandatory
 });
-// path is a package that comes with express and we need to require before use it.
-const path = require("path");
+
 // we set our view directory
 app.set("views", path.join(__dirname, "/views"));
 // here __dirname means ./backend/3. Node ejs & /views will embedd with it
