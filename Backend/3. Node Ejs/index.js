@@ -10,6 +10,11 @@ const path = require("path");
 // public is the folder name where we keep our static files
 // we can also use path.join(__dirname, "public") to set the path
 app.use(express.static(path.join(__dirname, "public")));
+// __dirname is a global variable that gives the current directory path
+
+// serving multiple static files at same time
+app.use(express.static(path.join(__dirname, "public/css")));
+app.use(express.static(path.join(__dirname, "public/js")));
 app.listen(port, () => {
     console.log("Server is running...");
 });
