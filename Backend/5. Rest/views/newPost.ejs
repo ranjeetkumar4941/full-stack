@@ -9,15 +9,13 @@
 <body>
     <h1>Write a new post</h1>
     <form action="/posts" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="Username" required><br><br>
+        <input type="text" placeholder="Username" id="username" name="Username" required><br><br>
         
-        <label for="content">Content:</label>
-        <textarea id="content" name="content" required></textarea><br><br>
+        <textarea placeholder="Write your content here..." cols="30" rows="15" id="content" name="content" required></textarea><br><br>
         
         <button type="submit">Submit</button><br><br>
     </form>
 
-    <a href="/posts">Back to all posts</a>
+    <a href="/posts"><button>Back to home</button></a>
 </body>
 </html>
