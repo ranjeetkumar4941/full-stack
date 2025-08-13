@@ -1,6 +1,6 @@
 CREATE DATABASE college;
 USE college;
-
+-- creating foreign key
 CREATE TABLE student (
 rollno INT PRIMARY KEY,
 name VARCHAR(30),
@@ -9,6 +9,7 @@ teacherid INT,
 FOREIGN KEY (teacherid) REFERENCES teacher(id)
 );
 
+-- creating primary key
 CREATE TABLE teacher(
 id INT PRIMARY KEY,
 name VARCHAR(30),
