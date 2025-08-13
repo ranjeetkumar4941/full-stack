@@ -6,7 +6,7 @@ rollno INT PRIMARY KEY,
 name VARCHAR(30),
 age TINYINT,
 teacherid INT,
-FOREIGN KEY (teacherid) REFERENCES teacher(id)
+FOREIGN KEY (teacherid) REFERENCES teacher(id) -- here, teacherid is a foreign key that references the id column in the teacher table
 );
 
 -- creating primary key
