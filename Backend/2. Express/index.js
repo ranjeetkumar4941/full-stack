@@ -2,7 +2,8 @@ let express = require("express"); // it return a function
 let app = express(); // express function returns an object
 // console.log(express);
 // console.log(app);
-const port=3000;
+const port=3000; // we can use any port number, but 3000 is commonly used and we can use 8080 as well 
+// we can hide our port number in .env file and use it in our code
 // for listen request we use listen method which takes port and callback as argument. it listen continuously
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
