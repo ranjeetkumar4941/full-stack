@@ -34,3 +34,23 @@ WHERE age>=15;
 
 SELECT name, age FROM student
 WHERE age + 1 =15;
+
+-- AND operator
+SELECT name, age FROM student
+WHERE age>=15 AND teacherid = 103;
+
+-- OR operator
+SELECT * FROM student
+WHERE age < 15 OR teacherid = 103;
+
+-- BETWEEN operator
+SELECT name, age FROM student
+WHERE age BETWEEN 15 AND 17;
+
+-- IN operator
+SELECT name, age FROM student
+WHERE age IN (10,12,14,16);
+
+-- NOT operator
+SELECT name, age FROM student
+WHERE age NOT IN (10,12,14,16); 
