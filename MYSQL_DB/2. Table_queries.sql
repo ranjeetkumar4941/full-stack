@@ -25,3 +25,14 @@ INSERT INTO user (id, age, name) VALUES -- We can insert value in a particular c
 -- SELECT COMMAND: used for view our data
 SELECT * FROM user;-- it views total data of table
 SELECT id, name FROM user;-- it view only selected column data from table
+
+-- UPDATE command : used to update values of row
+UPDATE user 
+SET followers = 110
+WHERE id = 1;
+
+SET SQL_SAFE_UPDATES = 0;
+
+-- DELETE command : used to delete existing rows. 
+DELETE FROM USER 
+WHERE FOLLOWERS < 100;
