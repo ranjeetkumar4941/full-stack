@@ -36,3 +36,29 @@ SET SQL_SAFE_UPDATES = 0;
 -- DELETE command : used to delete existing rows. 
 DELETE FROM USER 
 WHERE FOLLOWERS < 100;
+
+-- ALTER command : Used to change or modify schema(column)
+-- ADD COLUMN
+ALTER TABLE user 
+ADD COLUMN common VARCHAR(30);
+
+-- drop column
+ALTER TABLE user 
+DROP COLUMN email;
+
+-- Rename table
+ALTER TABLE user
+RENAME TO newuser;
+ALTER TABLE newuser 
+RENAME TO user;
+
+-- Modify column(modify datatype/constraints)
+ALTER TABLE user 
+MODIFY COLUMN posts VARCHAR(30) DEFAULT "HELLO";
+
+-- change column (Rename)
+ALTER TABLE user 
+CHANGE COLUMN common posts varchar(30);
+
+-- TRUNCATE COMMAND : to delete table's data
+TRUNCATE TABLE user;
