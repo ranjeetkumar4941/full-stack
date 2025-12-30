@@ -1,6 +1,6 @@
 const { faker } = require('@faker-js/faker');
 
-let data = function createRandomUser() {
+let randomUser = function createRandomUser() {
   return {
     userId: faker.string.uuid(),
     username: faker.internet.username(),
@@ -8,4 +8,4 @@ let data = function createRandomUser() {
     password: faker.internet.password()
   };
 }
-console.log(data());
+console.log(randomUser());
