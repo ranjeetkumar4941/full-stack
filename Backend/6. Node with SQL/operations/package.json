@@ -1,0 +1,16 @@
+{
+  "name": "db-operation-using-node",
+  "version": "1.0.0",
+  "description": "in this i am performing some operation in our db using node and mysql2 package",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon script.js",
+    "dev": "node script.js"
+  },
+  "author": "ranjeet",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^3.16.0"
+  }
+}
