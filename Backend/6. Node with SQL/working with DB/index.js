@@ -6,12 +6,15 @@ const port = 8080;
 const path = require('path');
 const mysql = require('mysql2');
 const {v4 : uuidv4} = require('uuid');
+const methodOverride = require('method-override')
 
 // setting view engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({ extended: true })); // to parse form data
+
+app.use(methodOverride('_method'));
 
 // creating connection with db
 const connection = mysql.createConnection({
@@ -53,7 +56,7 @@ app.get("/users", (req, res) => {
     
 });
 
-// adding new user
+// adding new user route
 // UI for add user
 app.get("/user", (req, res) => {
     res.render('newUser.ejs')
@@ -78,6 +81,23 @@ app.post("/user", (req, res) => {
         res.send("Error in DB.");
     }
     
+    
+});
+
+// route for edit Username
+app.get("/user/:id/", (req, res) => {
+    let id = req.params.id;
+    try {
+        let q= `SELECT * FROM user WHERE id='${id}'`;
+        connection.query(q, (err, result) => {
+            if(err) throw err;
+            let user = result[0];
+            res.render('editUsername.ejs', {user});
+        });
+    } catch (error) {
+        console.log(error);
+        res.send("Error in DB.");
+    }
     
 });
 app.listen(port, () => {
