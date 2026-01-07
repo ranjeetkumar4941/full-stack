@@ -6,7 +6,8 @@ const port = 8080;
 const path = require('path');
 const mysql = require('mysql2');
 const {v4 : uuidv4} = require('uuid');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const { resourceLimits } = require('worker_threads');
 
 // setting view engine
 app.set('view engine', 'ejs');
@@ -103,18 +104,41 @@ app.get("/user/:id/", (req, res) => {
     
 });
 // updating data
-app.patch("/user/:id/edit", (req, res) => {
+app.patch("/user/:id", (req, res) => {
+    let id = req.params.id;
     let {username, password} = req.body;
     try {
-        let q = `UPDATE user SET username='${username}' WHERE password='${password}'`;
-        connection.query(q, (err, result) => {
+        let q1 = `SELECT * FROM user WHERE id = '${id}'`;
+        connection.query(q1, (err, result) => {
             if(err) throw err;
-            res.redirect('/users');
-        })
+            let dbpass= result[0].password;
+            console.log(dbpass);
+            if(id == dbpass){
+                try {
+                    let q = `UPDATE user SET username='${username}' WHERE password='${password}'`;
+                    connection.query(q, (err, result) => {
+                        if(err) throw err;
+                        res.redirect('/users');
+                    });
+                } catch (error) {
+                    console.log(error);
+                    res.send("Error in DB.");
+                }
+            }else{
+                res.send(
+                    `<script>
+                    alert("Wrong Password!");
+                    window.location.href = "/user/${id}";
+                    </script>`
+                );
+            }
+            
+        });
     } catch (error) {
         console.log(error);
         res.send("Error in DB.");
     }
+    
 })
 app.listen(port, () => {
     console.log(`App is listening at http://localhost:${8080}`);

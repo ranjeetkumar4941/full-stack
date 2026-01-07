@@ -141,7 +141,7 @@
         </p>
     </div>
 
-    <form action="/user/<%= user.id %>/edit?_method=PATCH" method="post">
+    <form action="/user/<%= user.id %>?_method=PATCH" method="post">
         <div class="form-group">
             <label>Current Username</label>
             <input type="text" name="username" value="<%=user.username%>">
