@@ -85,6 +85,8 @@ app.post("/user", (req, res) => {
 });
 
 // route for edit Username
+
+// getting user data
 app.get("/user/:id/", (req, res) => {
     let id = req.params.id;
     try {
@@ -100,6 +102,20 @@ app.get("/user/:id/", (req, res) => {
     }
     
 });
+// updating data
+app.patch("/user/:id/edit", (req, res) => {
+    let {username, password} = req.body;
+    try {
+        let q = `UPDATE user SET username='${username}' WHERE password='${password}'`;
+        connection.query(q, (err, result) => {
+            if(err) throw err;
+            res.redirect('/users');
+        })
+    } catch (error) {
+        console.log(error);
+        res.send("Error in DB.");
+    }
+})
 app.listen(port, () => {
     console.log(`App is listening at http://localhost:${8080}`);
 });

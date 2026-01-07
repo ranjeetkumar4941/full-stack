@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,5 +11,119 @@
     <a href="user"><button>Join Us!</button></a>
     <a href="/users" target="_blank"><button>All users</button></a>
     
+</body>
+</html> -->
+
+<!-- Design using AI -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - User Portal</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        /* Container Card */
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2d3436;
+        }
+
+        .user-count {
+            font-size: 1.2rem;
+            color: #636e72;
+            margin-bottom: 2.5rem;
+        }
+
+        .user-count span {
+            font-weight: bold;
+            color: #0984e3; /* Modern Blue */
+            font-size: 1.5rem;
+        }
+
+        /* Button Styling */
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: #0984e3;
+            color: white;
+            box-shadow: 0 4px 15px rgba(9, 132, 227, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #074b83;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #fff;
+            color: #0984e3;
+            border: 2px solid #0984e3;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0f7ff;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Welcome Home</h1>
+        <p class="user-count">Join our growing community of <span><%= count %></span> users</p>
+        
+        <div class="button-group">
+            <a href="/user" target="_blank">
+                <button class="btn btn-primary">Join Us!</button>
+            </a>
+            <a href="/users" target="_blank">
+                <button class="btn btn-secondary">View All Users</button>
+            </a>
+        </div>
+    </div>
+
 </body>
 </html>
