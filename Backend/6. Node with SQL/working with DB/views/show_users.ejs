@@ -136,6 +136,16 @@
             background-color: #0984e3;
             color: white;
         }
+
+        #delete-btn {
+            border: 1px solid #e30909;
+            color: #e30909;
+        }
+
+        #delete-btn:hover {
+            background-color: #e30909;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -165,7 +175,8 @@
                     <td>
                         <form action="/user/<%= user.id %>" method="get">    
                             <button class="btn-edit">Edit User</button>
-                        </form>
+                        </form><br>
+                        <a href="/delete/<%= user.id %>"><button class="btn-edit" id="delete-btn">Delete</button></a>
                     </td>
                 </tr>
                 <% } %>

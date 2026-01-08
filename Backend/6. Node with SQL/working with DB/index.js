@@ -112,8 +112,7 @@ app.patch("/user/:id", (req, res) => {
         connection.query(q1, (err, result) => {
             if(err) throw err;
             let dbpass= result[0].password;
-            console.log(dbpass);
-            if(id == dbpass){
+            if(password == dbpass){
                 try {
                     let q = `UPDATE user SET username='${username}' WHERE password='${password}'`;
                     connection.query(q, (err, result) => {
@@ -134,6 +133,58 @@ app.patch("/user/:id", (req, res) => {
             }
             
         });
+    } catch (error) {
+        console.log(error);
+        res.send("Error in DB.");
+    }
+    
+});
+
+// Delete route
+// geting form gor delete user
+app.get("/delete/:id", (req, res) => {
+    let id = req.params.id;
+    try {
+        let q= `SELECT * FROM user WHERE id='${id}'`;
+        connection.query(q, (err, result) => {
+            if(err) throw err;
+            let user = result[0];
+            res.render('deleteUser.ejs', {user});
+        });
+    } catch (error) {
+        console.log(error);
+        res.send("Error in DB.");
+    }
+});
+
+// deleting user in db
+app.delete("/user/:id", (req, res) => {
+    let id = req.params.id;
+    let password = req.body.password;
+    try {
+        let q1 = `SELECT password FROM user WHERE id = '${id}'`;
+        connection.query(q1, (err, result) => {
+            if(err) throw err;
+            if (password == result[0].password) {
+                try {
+                    let q2=`DELETE FROM user WHERE password='${password}'`;
+                    connection.query(q2, (err, result) => {
+                        if(err) throw err;
+                        res.redirect("/users");
+                    })
+                } catch (error) {
+                    console.log(error);
+                    res.send("Error in DB.");
+                }
+            }else{
+                res.send(
+                    `<script>
+                    alert("Wrong Password!");
+                    window.location.href = "/delete/${id}";
+                    </script>`
+                );
+            }
+        })
     } catch (error) {
         console.log(error);
         res.send("Error in DB.");
