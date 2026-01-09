@@ -32,6 +32,11 @@ db.student.insertMany( // it takes an array of objects(json)
             "city": "Delhi"
         },
         {
+            "name": "Tony",
+            "age": 22,
+            "city": "Delhi"
+        },
+        {
             "name": "Steve",
             "age": 25,
             "city": "Goa",
