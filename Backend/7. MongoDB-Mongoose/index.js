@@ -111,7 +111,100 @@ const User = mongoose.model("User", userSchema);
 
 // we can find our Document using ID
 // it takes id as arg
-User.findById("696522c5233d1f8e7011859f")
+// User.findById("696522c5233d1f8e7011859f")
+//   .then(result=> {
+//     console.log(result);
+    
+//   }).catch(err => {
+//     console.log(err);
+    
+//   })
+
+
+// ----------------------- UPDATE --------------
+// It also returns Query object which are thennable(they have .then())
+// It take two args: Condition, value
+// update one document
+// User.updateOne({name: "tony"}, {age: 24})
+//   .then(result=> {
+//     console.log(result);
+    
+//   }).catch(err => {
+//     console.log(err);
+    
+//   });
+
+// updating multiple document
+// User.updateMany({$and: [{age: {$lt: 30}}, {age: {$gt: 20}}]}, {age: 25})
+//   .then(result=> {
+//     console.log(result);
+    
+//   }).catch(err => {
+//     console.log(err);
+    
+//   })
+
+// if we use Update method then it doesn't displays that which document has been update so we use these method:
+// -.findOneAndUpdate()
+// -.findByIdAndUpdate()
+// these method firstly find and display document after that update them
+
+// User.findOneAndUpdate({age:{$lt: 18}}, {age: 18})
+//   .then(result=> {
+//     console.log(result);
+    
+//   }).catch(err => {
+//     console.log(err);
+    
+//   })
+
+// Updating by ID
+// User.findByIdAndUpdate("696522c5233d1f8e7011859f", {age: 24})
+//   .then(result=> {
+//     console.log(result);
+    
+//   }).catch(err => {
+//     console.log(err);
+    
+//   })
+
+
+// ----------------------- DELETE -------------------
+// It also returns query object which have .then method
+// it takes condition(filter)
+// Deleting one document
+// User.deleteOne({age: {$lt: 20}})
+//   .then(result=> {
+//     console.log(result);
+    
+//   }).catch(err => {
+//     console.log(err);
+    
+//   });
+
+// deleting multiple document
+// User.deleteMany({age: {$lt: 30}})
+//   .then(result=> {
+//     console.log(result);
+    
+//   }).catch(err => {
+//     console.log(err);
+    
+//   })
+
+// It has also same issue that it doesn't display that which document ids going to delete from collection
+// So we use .findOneAnUpdate() and .findByIdAndUpdate()
+
+// User.findByIdAndDelete("696522c5233d1f8e7011859f")
+//   .then(result=> {
+//     console.log(result);
+    
+//   }).catch(err => {
+//     console.log(err);
+    
+//   })
+
+User.findOneAndDelete({age: 25})
   .then(result=> {
     console.log(result);
     
