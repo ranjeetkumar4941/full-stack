@@ -41,168 +41,169 @@ const User = mongoose.model("User", userSchema);
 // -------------------------- INSERT -----------------
 // Inserting single document
 // We create an object of our model(class/collection)
-// let user1 = new User({
-//   name: "Bob",
-//   email: "bob12@apche.com",
-//   age:34
-// });
+let user1 = new User({
+  name: "Bob",
+  email: "bob12@apche.com",
+  age:34
+});
 // it doesn't insert data in our collection 
 // for insertiing data, we have to save it
 
 // user1.save();
 // .save() is a asynchronous function. so, we use promise to handle it.
 
-// user1.save()
-//   .then((result) => {
-//     console.log(result);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   })
+user1.save()
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
 
 // Insert multiple Data(Document)
 // We use insertMany() to insert multiple document. It takes an array in which we write our multiple document
 // it returns promise
-// User.insertMany([
-//   {name: "john", email: "john@gmail.com", age:23},
-//   {name: "tony", email: "tony@gmail.com", age:34},
-//   {name: "lilly", email: "lilly@gmail.com", age:14}
-// ]).then((res) => {
-//   console.log(res);
+User.insertMany([
+  {name: "john", email: "john@gmail.com", age:23},
+  {name: "tony", email: "tony@gmail.com", age:34},
+  {name: "lilly", email: "lilly@gmail.com", age:14}
+]).then((res) => {
+  console.log(res);
   
-// }).catch(err => {
-//   console.log(err);
+}).catch(err => {
+  console.log(err);
   
-// })
+})
 
 
 // ---------------------- FIND ------------------- 
 // finding single document
-// User.findOne({age :{$gt: 20}})
-//   .then(result=> {
-//     console.log(result);
+User.findOne({age :{$gt: 20}})
+  .then(result=> {
+    console.log(result);
     
-//   }).catch(err => {
-//     console.log(err);
+  }).catch(err => {
+    console.log(err);
     
-//   })
+  })
 
   // Every find() doesn't return promise, it returns query object(thenable). But, we can use .then() with this
   
 // it will gives all document
-// User.find({})
-//   .then(result=> {
-//     console.log(result);
+User.find({})
+  .then(result=> {
+    console.log(result);
     
-//   }).catch(err => {
-//     console.log(err);
+  }).catch(err => {
+    console.log(err);
     
-//   })
+  })
 
 // we pass condition for according to requirement
-// User.find({age:{$gt: 20}})
-//   .then(result=> {
-//     console.log(result);
+User.find({age:{$gt: 20}})
+  .then(result=> {
+    console.log(result);
     
-//   }).catch(err => {
-//     console.log(err);
+  }).catch(err => {
+    console.log(err);
     
-//   })
+  })
 
 // we can find our Document using ID
 // it takes id as arg
-// User.findById("696522c5233d1f8e7011859f")
-//   .then(result=> {
-//     console.log(result);
+User.findById("696522c5233d1f8e7011859f")
+  .then(result=> {
+    console.log(result);
     
-//   }).catch(err => {
-//     console.log(err);
+  }).catch(err => {
+    console.log(err);
     
-//   })
+  })
 
 
 // ----------------------- UPDATE --------------
 // It also returns Query object which are thennable(they have .then())
 // It take two args: Condition, value
 // update one document
-// User.updateOne({name: "tony"}, {age: 24})
-//   .then(result=> {
-//     console.log(result);
+User.updateOne({name: "tony"}, {age: 24})
+  .then(result=> {
+    console.log(result);
     
-//   }).catch(err => {
-//     console.log(err);
+  }).catch(err => {
+    console.log(err);
     
-//   });
+  });
 
 // updating multiple document
-// User.updateMany({$and: [{age: {$lt: 30}}, {age: {$gt: 20}}]}, {age: 25})
-//   .then(result=> {
-//     console.log(result);
+User.updateMany({$and: [{age: {$lt: 30}}, {age: {$gt: 20}}]}, {age: 25})
+  .then(result=> {
+    console.log(result);
     
-//   }).catch(err => {
-//     console.log(err);
+  }).catch(err => {
+    console.log(err);
     
-//   })
+  })
 
 // if we use Update method then it doesn't displays that which document has been update so we use these method:
 // -.findOneAndUpdate()
 // -.findByIdAndUpdate()
-// these method firstly find and display document after that update them
+// these methods displays value of document before updating it. For getting updated value of documents we use an option, which is 'new'.
+// By default value of 'new' is false. we change it into true
 
-// User.findOneAndUpdate({age:{$lt: 18}}, {age: 18})
-//   .then(result=> {
-//     console.log(result);
+User.findOneAndUpdate({age: 34}, {age: 35}, {new: true})
+  .then(result=> {
+    console.log(result);
     
-//   }).catch(err => {
-//     console.log(err);
+  }).catch(err => {
+    console.log(err);
     
-//   })
+  })
 
 // Updating by ID
-// User.findByIdAndUpdate("696522c5233d1f8e7011859f", {age: 24})
-//   .then(result=> {
-//     console.log(result);
+User.findByIdAndUpdate("696522c5233d1f8e7011859f", {age: 24}, {new: true})
+  .then(result=> {
+    console.log(result);
     
-//   }).catch(err => {
-//     console.log(err);
+  }).catch(err => {
+    console.log(err);
     
-//   })
+  })
 
 
 // ----------------------- DELETE -------------------
 // It also returns query object which have .then method
 // it takes condition(filter)
 // Deleting one document
-// User.deleteOne({age: {$lt: 20}})
-//   .then(result=> {
-//     console.log(result);
+User.deleteOne({age: {$lt: 20}})
+  .then(result=> {
+    console.log(result);
     
-//   }).catch(err => {
-//     console.log(err);
+  }).catch(err => {
+    console.log(err);
     
-//   });
+  });
 
 // deleting multiple document
-// User.deleteMany({age: {$lt: 30}})
-//   .then(result=> {
-//     console.log(result);
+User.deleteMany({age: {$lt: 30}})
+  .then(result=> {
+    console.log(result);
     
-//   }).catch(err => {
-//     console.log(err);
+  }).catch(err => {
+    console.log(err);
     
-//   })
+  })
 
 // It has also same issue that it doesn't display that which document ids going to delete from collection
 // So we use .findOneAnUpdate() and .findByIdAndUpdate()
 
-// User.findByIdAndDelete("696522c5233d1f8e7011859f")
-//   .then(result=> {
-//     console.log(result);
+User.findByIdAndDelete("696522c5233d1f8e7011859f")
+  .then(result=> {
+    console.log(result);
     
-//   }).catch(err => {
-//     console.log(err);
+  }).catch(err => {
+    console.log(err);
     
-//   })
+  })
 
 User.findOneAndDelete({age: 25})
   .then(result=> {
