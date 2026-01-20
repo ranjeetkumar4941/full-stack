@@ -10,6 +10,8 @@ const { log } = require('console');
 // setting view engine
 app.set("view engine", 'ejs');
 app.set("views", path.join(__dirname, "views"));
+
+// to parse data for post request
 app.use(express.urlencoded({extended: true}));
 
 // connecting with MongoDB
@@ -23,6 +25,7 @@ async function main(){
     await mongoose.connect("mongodb://127.0.0.1:27017/whatsapp")
 }
 
+// all chats route
 app.get("/chats", (req, res) => {
     Chat.find({}).then((result) => {
         res.render('allchats.ejs', {chats: result});
@@ -35,10 +38,12 @@ app.get("/chats", (req, res) => {
     // res.send("This is home");
 })
 
+// new chat route for form
 app.get("/chats/new", (req, res) => {
     res.render("newchat.ejs");
 })
 
+// save new chat route
 app.post("/chats", (req, res) => {
     console.log(req.body);
     let newchat = new Chat({
@@ -56,8 +61,32 @@ app.post("/chats", (req, res) => {
         res.send("Error in DB");
     })
     res.redirect("/chats");
+});
+
+// edit chat form route
+app.get("/chats/:id/edit", async (req, res) => {
+    let chat = await Chat.findById(req.params.id);
+    
+    res.render("edit.ejs", {chat});
+    
 })
 
+// Update chat route
+app.post("/chats/:id", (req, res) => {
+    let id = req.params.id;
+    let message = req.body.msg;
+    
+    Chat.findByIdAndUpdate(id, {msg: message, created_at: new Date()}, {runValidators: true, new: true})
+    .then(res => {
+        console.log(res);
+        
+    }).catch((err) => {
+        res.send("Error in DB");
+        // console.log(err);
+        console.log(err.errors.msg.properties.message);
+    })
+    res.redirect("/chats")
+})
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
     

@@ -25,12 +25,17 @@
         <div class="chat">
             <h3>
                 <%= chat.msg %>
+                <form action="chats/<%= chat._id %>/edit" method="get">
+                    <button>Edit</button>
+                </form>
             </h3>
             <p>
                 <span>From: <%= chat.from %></span>
                 &nbsp;&nbsp;&nbsp;
                 <span>To: <%= chat.to %></span>
             </p>
+            <p><%= chat.created_at.toString().split(" ")[4] %></p>
+            <p><%= chat.created_at.toString().split(" ").slice(0, 4).join(" ") %></p>
         </div>
         <br><br>
         <% } %>
