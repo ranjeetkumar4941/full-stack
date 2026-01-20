@@ -7,38 +7,194 @@
     <title>Chats</title>
 
     <style>
-        .chat {
+        /* .chat {
             padding-left: 5px;
             background-color: aliceblue;
             border-radius: 15px;
             padding: 10px;
+        } */
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --primary-blue: #4f46e5;
+            --primary-hover: #4338ca;
+            --danger-red: #ef4444;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        /* Primary Button Style */
+        .btn-create {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-create:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Chat Card Styling */
+        .chat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .chat-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .chat-content {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .chat-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-top: 15px;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .meta-info strong {
+            color: var(--text-dark);
+        }
+
+        .timestamp {
+            display: block;
+            margin-top: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* Action Buttons */
+        .actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-edit,
+        .btn-delete {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: 0.2s;
+        }
+
+        .btn-edit {
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+        }
+
+        .btn-edit:hover {
+            background-color: #e2e8f0;
+        }
+
+        .btn-delete {
+            background-color: #fef2f2;
+            color: var(--danger-red);
+        }
+
+        .btn-delete:hover {
+            background-color: var(--danger-red);
+            color: white;
         }
     </style>
 </head>
 
 <body>
-    <div>
-        <h1>All Chats</h1>
-        <a href="chats/new"><button>Create chat</button></a>
-    </div><br>
-    <% for( let chat of chats ) { %>
-        <div class="chat">
-            <h3>
-                <%= chat.msg %>
-                <form action="chats/<%= chat._id %>/edit" method="get">
-                    <button>Edit</button>
-                </form>
-            </h3>
-            <p>
-                <span>From: <%= chat.from %></span>
-                &nbsp;&nbsp;&nbsp;
-                <span>To: <%= chat.to %></span>
-            </p>
-            <p><%= chat.created_at.toString().split(" ")[4] %></p>
-            <p><%= chat.created_at.toString().split(" ").slice(0, 4).join(" ") %></p>
+    <div class="container">
+        <div class="header-section">
+            <h1>All Chats</h1>
+            <a href="/chats/new"><button class="btn-create">Create Chat</button></a>
         </div>
-        <br><br>
-        <% } %>
+
+        <% for( let chat of chats ) { %>
+            <div class="chat-card">
+                <div class="chat-content">
+                    <%= chat.msg %>
+                </div>
+
+                <div class="chat-footer">
+                    <div class="meta-info">
+                        <span>From: <strong>
+                                <%= chat.from %>
+                            </strong> &nbsp; To: <strong>
+                                <%= chat.to %>
+                            </strong>
+                        </span>
+                        <span class="timestamp">
+                            <%= chat.created_at.toString().split(" ").slice(0, 4).join(" ") %> 
+                            | 
+                            <%= chat.created_at.toString().split(" ")[4] %>
+                        </span>
+                    </div>
+
+                    <div class=" actions">
+                        <form action="chats/<%= chat._id %>/edit" method="get">
+                            <button class="btn-edit">Edit</button>
+                        </form>
+                        <form action="chats/<%= chat._id %>?_method=DELETE" method="POST">
+                            <button class="btn-delete">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </div>
 </body>
 
 </html>

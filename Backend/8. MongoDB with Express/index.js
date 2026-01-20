@@ -3,6 +3,9 @@ const app = express();
 const mongoose = require('mongoose');
 const path = require('path');
 const port = 8080;
+const methodoverride = require("method-override");
+
+app.use(methodoverride("_method"));
 
 const Chat = require('./models/chat.js');
 const { log } = require('console');
@@ -72,13 +75,14 @@ app.get("/chats/:id/edit", async (req, res) => {
 })
 
 // Update chat route
-app.post("/chats/:id", (req, res) => {
+app.patch("/chats/:id", (req, res) => {
     let id = req.params.id;
     let message = req.body.msg;
     
     Chat.findByIdAndUpdate(id, {msg: message, created_at: new Date()}, {runValidators: true, new: true})
     .then(res => {
-        console.log(res);
+        console.log("success");
+        
         
     }).catch((err) => {
         res.send("Error in DB");
@@ -86,7 +90,18 @@ app.post("/chats/:id", (req, res) => {
         console.log(err.errors.msg.properties.message);
     })
     res.redirect("/chats")
-})
+});
+
+// delete route
+app.delete("/chats/:id", (req, res) => {
+    let id = req.params.id;
+    Chat.findByIdAndDelete(id).then(result => {
+        console.log(result);
+    }).catch(err => {
+        console.log(err);
+    });
+    res.redirect("/chats");
+});
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
     
